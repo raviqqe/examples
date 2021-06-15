@@ -1,0 +1,4 @@
+rule cc
+  command = clang -c -o $out $in
+
+build foo.o: cc foo.c
