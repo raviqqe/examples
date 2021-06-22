@@ -1,6 +1,7 @@
 rule cp
   command = cp $in $out
 
-build foo.log: cp foo.c
+build foo.log: cp $x
+  x = foo.c
 
 default foo.log
