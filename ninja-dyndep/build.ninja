@@ -1,15 +1,18 @@
 rule cc
-  command = clang -c -o $out $in
-
-rule h
-  command = scripts/h.sh $in $out
+  command = scripts/cc.sh $in $out
 
 rule dd
   command = scripts/dd.sh $in $out
 
-build foo.o: cc foo.c || foo.dd
+build foo.o foo.h: cc foo.c || foo.dd
   dyndep = foo.dd
+build bar.o bar.h: cc bar.c || bar.dd
+  dyndep = bar.dd
+build baz.o baz.h: cc baz.c || baz.dd
+  dyndep = baz.dd
+
 build foo.dd: dd foo.c
-build bar.h: h bar.c
+build bar.dd: dd bar.c
+build baz.dd: dd baz.c
 
 default foo.o
