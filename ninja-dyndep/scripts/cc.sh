@@ -2,5 +2,5 @@
 
 set -e
 
-clang -c -o $2 $1
-$(dirname $0)/h.sh $1 $3
+clang -c -o $3 $1
+$(dirname $0)/h.sh $1 $4
