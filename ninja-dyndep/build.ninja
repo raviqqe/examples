@@ -9,7 +9,10 @@ build foo.o foo.h: cc foo.c foo.d || foo.dd
 build bar.o bar.h: cc bar.c foo.d || bar.dd
   dyndep = bar.dd
 
-build foo.d foo.dd: dd foo.c
-build bar.d bar.dd: dd bar.c
+build foo.d.dummy foo.dd: dd foo.c
+build bar.d.dummy bar.dd: dd bar.c
+
+build foo.d foo.dd.dummy: dd foo.c
+build bar.d bar.dd.dummy: dd bar.c
 
 default foo.o
