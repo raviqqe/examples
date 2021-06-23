@@ -1,0 +1,15 @@
+rule cc
+  command = scripts/cc.sh $in $out
+
+rule dd
+  command = scripts/dd.sh $in $out
+
+build foo.o foo.h: cc foo.c foo.d || foo.dd
+  dyndep = foo.dd
+build bar.o bar.h: cc bar.c foo.d || bar.dd
+  dyndep = bar.dd
+
+build foo.d foo.dd: dd foo.c
+build bar.d bar.dd: dd bar.c
+
+default foo.o
