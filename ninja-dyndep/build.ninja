@@ -11,8 +11,8 @@ build bar.o bar.h: cc bar.c || bar.dd
 build baz.o baz.h: cc baz.c || baz.dd
   dyndep = baz.dd
 
-build foo.dd: dd foo.c
-build bar.dd: dd bar.c
-build baz.dd: dd baz.c
+build foo.d foo.dd: dd foo.c
+build bar.d bar.dd: dd bar.c
+build baz.d baz.dd: dd baz.c
 
 default foo.o

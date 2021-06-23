@@ -2,4 +2,5 @@
 
 set -e
 
-cp include/${1%.c}.dd $2
+echo deps! >$2
+cp include/${1%.c}.dd $3
