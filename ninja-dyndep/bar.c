@@ -1,3 +1,1 @@
-#include "baz.h"
-
-int bar() { return baz(); }
+int bar() { return 0; }

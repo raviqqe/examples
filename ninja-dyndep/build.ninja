@@ -8,11 +8,8 @@ build foo.o foo.h: cc foo.c foo.d || foo.dd
   dyndep = foo.dd
 build bar.o bar.h: cc bar.c foo.d || bar.dd
   dyndep = bar.dd
-build baz.o baz.h: cc baz.c foo.d || baz.dd
-  dyndep = baz.dd
 
 build foo.d foo.dd: dd foo.c
 build bar.d bar.dd: dd bar.c
-build baz.d baz.dd: dd baz.c
 
 default foo.o
