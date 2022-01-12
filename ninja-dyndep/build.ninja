@@ -6,7 +6,7 @@ rule dd
 
 build foo.o foo.h: cc foo.c foo.d || foo.dd
   dyndep = foo.dd
-build bar.o bar.h: cc bar.c foo.d || bar.dd
+build bar.o bar.h: cc bar.c bar.d || bar.dd
   dyndep = bar.dd
 
 build foo.d foo.dd: dd foo.c
